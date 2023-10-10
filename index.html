@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- toolbar-->
+    <header class="toolbox-cont">
+        <div class="toolbox_priority_cont">
+            <div class="color red"></div>
+            <div class="color blue"></div>
+            <div class="color green"></div>
+            <div class="color purple"></div>
+        </div>
+        <div class="action-btn-cont">
+            <div class="add-btn">
+                <i class="fa-solid fa-plus largeicon"></i>
+            </div>
+            <div class="remove-btn">
+                <i class="fa-solid fa-trash largeicon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-cont"></main>
+    
+    <div class="modal-cont">
+        <textarea class="textarea-cont" placeholder="Enter Your Task"></textarea>
+        <div class="priority-color-cont">
+            <div class="color_modal red selected" currColor="red"></div>
+            <div class="color_modal blue" currColor="blue"></div>
+            <div class="color_modal green" currColor="green"></div>
+            <div class="color_modal purple" currColor="purple"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/short-unique-id@5.0.3/dist/short-unique-id.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

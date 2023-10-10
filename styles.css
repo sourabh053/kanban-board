@@ -1,0 +1,151 @@
+:root{
+    --red: #ff7675;
+    --blue: #3498db;
+    --green: #1abc9c;
+    --purple: #9b59b6;
+    --modal-bg: #2c3e50;
+}
+html,
+body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+.toolbox-cont{
+    height: 5rem;
+    background-color: var(--modal-bg);
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.toolbox_priority_cont{
+    background-color: lightblue;
+    height: 3rem;
+    width: 15rem;
+    margin-left: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.action-btn-cont{
+    background-color: lightblue;
+    height: 3rem;
+    width: 10rem;
+    display: flex;
+}
+.color{
+    width: 20%;
+    height: 60%;
+}
+.red{
+    background-color: var(--red);
+}
+.blue{
+    background-color: var(--blue);
+}
+.green{
+    background-color: var(--green);
+}
+.purple{
+    background-color: var(--purple);
+}
+.add-btn,.remove-btn{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.largeicon{
+    font-size: 1.8rem;
+}
+.ticket-cont{
+    height: 10rem;
+    width: 15rem;
+    background-color: aliceblue;
+    border: 1px solid gray;
+    position: relative;
+}
+.main-cont{
+    padding: 3rem 2rem 0 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.modal-cont{
+    height: 20rem;
+    width: 35rem;
+    background-color: var(--modal-bg);
+    position: fixed;
+    left: 25vw;
+    top: 25vh;
+    display: flex;
+    display: none;
+}
+.textarea-cont{
+    height: 100%;
+    width: 75%;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    padding: 1rem;
+    resize: none;
+}
+.priority-color-cont{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.color_modal{
+    height: 15%;
+    width: 70%;
+}
+.selected{
+    border: 5px solid #ecf0f1;
+}
+.ticket-color{
+    height: 10%;
+}
+.ticket-id{
+    height: 10%;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding-left: 4px;
+    margin-bottom: 5px;
+}
+.ticket-area{
+    height: 76%;
+    padding: 0 4px;
+    overflow: hidden;
+}
+.ticket-area:hover{
+    overflow-y: auto;
+}
+.lock_icon{
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
