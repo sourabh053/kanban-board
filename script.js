@@ -5,10 +5,12 @@ const textArea = document.querySelector(".textarea-cont");
 const priorityColorArr = document.querySelectorAll(".toolbox_priority_cont .color");
 let deleteBtn = document.querySelector(".remove-btn");
 const mainContiner = document.querySelector(".main-cont");
+const body = document.querySelector("body");
 
 const uid = new ShortUniqueId({ length: 5 });
 const colorArray = ["red","blue","green","purple"];
 let deleteFlag = false;
+let flag = false;
 let ticketArr = [];
 if(localStorage.getItem("ticketArr") != null){
     let stringArr = localStorage.getItem("ticketArr");
@@ -21,6 +23,7 @@ if(localStorage.getItem("ticketArr") != null){
 
 addBtn.addEventListener("click",function(){
     modalContainer.style.display = "flex";
+    flag = true;
     textArea.focus();
 })
 
@@ -38,11 +41,35 @@ for(let i=0; i<colorModalArr.length; i++){
 textArea.addEventListener("keydown",function(e){
     if(e.key == "Enter" && e.shiftKey == false){
         modalContainer.style.display = "none";
+        flag = false;
 
         const task = textArea.value;
+        if(task == "") return;
         const currColorElm = modalContainer.querySelector(".selected");
         const taskColor = currColorElm.getAttribute("currColor");
         textArea.value="";
+        for(let i=0; i<colorModalArr.length; i++){
+            colorModalArr[i].classList.remove("selected");
+        }
+        colorModalArr[0].classList.add("selected");
+        createTicket(taskColor,task);
+    }
+})
+
+body.addEventListener("keydown",function(e){
+    if(flag == true && e.key == "Enter"){
+        modalContainer.style.display = "none";
+        flag = false;
+
+        const task = textArea.value;
+        if(task == "") return;
+        const currColorElm = modalContainer.querySelector(".selected");
+        const taskColor = currColorElm.getAttribute("currColor");
+        textArea.value="";
+        for(let i=0; i<colorModalArr.length; i++){
+            colorModalArr[i].classList.remove("selected");
+        }
+        colorModalArr[0].classList.add("selected");
         createTicket(taskColor,task);
     }
 })
